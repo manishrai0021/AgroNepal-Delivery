@@ -1,5 +1,3 @@
-import Footer from "../Footer";
-import Navbar from "../Navbar";
 import OtherDescription from "./OtherDescription";
 import Resume from "./Resume";
 import WorkHistory from "./WorkHistory";
@@ -42,7 +40,6 @@ const ResumeMain = () => {
   };
   return (
     <>
-      <Navbar />
       <div className="w-[80%] m-auto">
         <div ref={componentRef}>
           <Resume cv={cv} />
@@ -66,7 +63,6 @@ const ResumeMain = () => {
           </a>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

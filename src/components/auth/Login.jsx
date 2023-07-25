@@ -125,14 +125,14 @@ const Login = () => {
                       <div>
                         <button
                           type="submit"
-                          className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none w-full px-4 py-3 leading-6 rounded border-blue-700 bg-blue-700 text-white hover:text-white hover:bg-blue-800 hover:border-blue-800 focus:ring focus:ring-blue-500 focus:ring-opacity-50 active:bg-blue-700 active:border-blue-700"
+                          className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none w-full px-4 py-3 leading-6 rounded border-black bg-black text-white hover:text-white hover:bg-stone-900 hover:border-blue-800 focus:ring focus:ring-blue-500 focus:ring-opacity-50 active:bg-blue-700 active:border-blue-700"
                         >
                           Sign In
                         </button>
 
                         <button
                          
-                          className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none w-full px-4 py-3 leading-6 rounded border-blue-700 text-black hover:text-whitefocus:ring focus:ring-blue-500 focus:ring-opacity-50  active:border-blue-700 mt-4"
+                          className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none w-full px-4 py-3 leading-6 rounded border-black text-black hover:bg-black hover:text-white focus:ring-blue-500 focus:ring-opacity-50  active:border-blue-700 mt-4"
                         >
                           <a href="http://localhost:4000/auth/google">
                           Sign In With Google
@@ -151,7 +151,7 @@ const Login = () => {
                           </label> */}
                           <a
                             href="/forgotpassword"
-                            className="inline-block text-blue-600 hover:text-blue-400"
+                            className="inline-block underline hover:text-blue-400"
                           >
                             Forgot Password?
                           </a>
@@ -163,7 +163,7 @@ const Login = () => {
                 <div className="py-4 px-5 lg:px-6 w-full text-sm text-center bg-gray-50">
                   Don’t have an account yet?
                   <a
-                    className="font-medium text-blue-600 hover:text-blue-400"
+                    className="font-medium underline hover:text-blue-400"
                     href="/register"
                   >
                     Join us today

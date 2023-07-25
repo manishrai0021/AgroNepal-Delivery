@@ -2,8 +2,6 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { baseUrl } from "../config";
-import Footer from "../Footer";
-import Navbar from "../Navbar";
 import EditProfile from "./EditProfile";
 
 const Profile = () => {
@@ -39,7 +37,6 @@ const Profile = () => {
 
   return (
     <div>
-      <Navbar />
       <div className="md:p-16 p-5">
         <div className="p-8 bg-white shadow mt-24">
           <div className="grid grid-cols-1 md:grid-cols-3">
@@ -125,7 +122,6 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

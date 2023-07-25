@@ -3,8 +3,6 @@ import Preloder from "../preloader/preloder";
 import Carousel from "./Carousel";
 import Content from "./Content";
 import FeturedJobs from "./FeturedJobs";
-import Footer from "./Footer";
-import Navbar from "./Navbar";
 import TopJobs from "./TopJobs";
 
 const Home = () => {
@@ -22,12 +20,10 @@ const Home = () => {
                 <Preloder />
             ) : (
                 <div>
-                    <Navbar />
                     <Carousel />
                     <TopJobs />
                     <FeturedJobs />
                     <Content />
-                    <Footer />
                 </div>
             )}
         </>

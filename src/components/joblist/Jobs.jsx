@@ -1,6 +1,4 @@
 import React, { useCallback, useEffect, useState } from "react";
-import Footer from "../Footer";
-import Navbar from "../Navbar";
 import Filter from "./Filter";
 import JobList from "./JobList";
 
@@ -74,7 +72,6 @@ const Jobs = () => {
 
   return (
     <>
-      <Navbar />
       <div className="flex flex-wrap gap-8 w-[90%] m-auto">
         {/* <div>
           <Filter
@@ -87,7 +84,6 @@ const Jobs = () => {
           <JobList jobs={allFilter} />
         </div>
       </div>
-      <Footer />
     </>
   );
 };

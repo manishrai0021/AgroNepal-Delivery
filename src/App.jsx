@@ -32,11 +32,14 @@ import ForgotPassword from "./components/auth/ForgotPassword";
 import ResetPassword from "./components/auth/resetPassword";
 import AdminContact from "./components/AdminDashboard/AdminContact";
 import AppliedJobs from "./components/bookMarked/AppliedJobs";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
+      <Navbar/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/registerAsCompany" element={<RegisterAsCompany />} />
@@ -81,6 +84,7 @@ function App() {
             </Route>
           )}
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>
   );
