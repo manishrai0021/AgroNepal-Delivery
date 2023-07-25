@@ -36,5 +36,17 @@
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.4",
     "vite": "^4.0.0"
-  }
+  },
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manishrai0021/Freelancing-Site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manishrai0021/Freelancing-Site/issues"
+  },
+  "homepage": "https://github.com/manishrai0021/Freelancing-Site#readme",
+  "description": ""
 }

@@ -5,7 +5,9 @@ import axios from "axios";
 import { baseUrl } from "./config";
 
 const FetauredCard = () => {
-  const [jobs, setJobs] = React.useState([]);
+  const [jobs, setJobs] = React.useState([
+    
+  ]);
   const fetchJobs = async () => {
     const res = await axios.get(`${baseUrl}admin/jobs`);
     console.log(res.data);

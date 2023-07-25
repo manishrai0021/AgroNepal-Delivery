@@ -30,7 +30,7 @@ const Navbar = () => {
     <div className=" bg-black text-white">
       <div className="flex justify-between mx-6 h-16 pt-3 ">
         <div>
-          <h1 className={logo ? "hidden" : "block"}>Job Search</h1>
+          <h1 className={logo ? "hidden" : "block"}>Deliman</h1>
         </div>
         <ul className="hidden md:flex ">
           <Link to="/">
