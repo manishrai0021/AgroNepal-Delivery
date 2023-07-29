@@ -10,60 +10,96 @@ import { baseUrl } from "../config";
 
 const JobList = () => {
   const [showModal, setShowModal] = useState(false);
-  const [jobs, setJobs] = useState([]);
+  const [jobs, setJobs] = useState([
+    {
+      type: "Kitchen",
+      location: "Gangabu, Kathmandu",
+      weight: 10,
+      userType: "Normal",
+      charge: 500,
+    },
+    {
+      type: "Garden",
+      location: "Basundhara, Kathmandu",
+      weight: 20,
+      userType: "Normal",
+      charge: 1000,
+    },
+    {
+      type: "Kitchen",
+      location: "Koteshwor, Kathmandu",
+      weight: 5,
+      userType: "Subscribed",
+      charge: 100,
+    },
+    {
+      type: "Kitchen",
+      location: "Ratnapark, Kathmandu",
+      weight: 10,
+      userType: "Normal",
+      charge: 500,
+    },
+    {
+      type: "Food",
+      location: "Thamel, Kathmandu",
+      weight: 100,
+      userType: "Subscribed",
+      charge: 5000,
+    },
+  ]);
   const [inputSearch, setInputSearch] = useState("");
   const [categories, setCategories] = useState([]);
   const [selectedValue, setSelectedValue] = useState(null);
 
-  const fetchJobs = async () => {
-    try {
-      const res = await axios.get(baseUrl + "job/alljobs", {
-        headers: {
-          "x-access-token": localStorage.getItem("token"),
-        },
-      });
-      console.log(res.data);
+  // const fetchJobs = async () => {
+  //   try {
+  //     const res = await axios.get(baseUrl + "job/alljobs", {
+  //       headers: {
+  //         "x-access-token": localStorage.getItem("token"),
+  //       },
+  //     });
+  //     console.log(res.data);
 
-      setJobs(res.data.jobs);
-      console.log(res.data.data.jobs);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  const fetchCategories = async () => {
-    const res = await axios.get(baseUrl + "company/category");
-    console.log(res.data);
-    setCategories(res.data.catgory);
-  };
-  useEffect(() => {
-    fetchJobs();
-    fetchCategories();
-  }, []);
-  const jobSearch = async (value) => {
-    const res = await axios.post(`${baseUrl}job/search`, {
-      search: value,
-    });
-    console.log(res.data);
-    console.log(value);
-    if (value !== "") {
-      setJobs(res.data.jobs);
-    } else {
-      fetchJobs();
-    }
-  };
+  //     setJobs(res.data.jobs);
+  //     console.log(res.data.data.jobs);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+  // const fetchCategories = async () => {
+  //   const res = await axios.get(baseUrl + "company/category");
+  //   console.log(res.data);
+  //   setCategories(res.data.catgory);
+  // };
+  // useEffect(() => {
+  //   fetchJobs();
+  //   fetchCategories();
+  // }, []);
+  // const jobSearch = async (value) => {
+  //   const res = await axios.post(`${baseUrl}job/search`, {
+  //     search: value,
+  //   });
+  //   console.log(res.data);
+  //   console.log(value);
+  //   if (value !== "") {
+  //     setJobs(res.data.jobs);
+  //   } else {
+  //     fetchJobs();
+  //   }
+  // };
   const navigate = useNavigate();
   let login = localStorage.getItem("token") ? true : false;
-  const searchByCategory = async (e) => {
-    setSelectedValue(e.value);
+  // const searchByCategory = async (e) => {
+  //   setSelectedValue(e.value);
 
-    if (e.value) {
-      const res = await axios.get(`${baseUrl}job/category/${e.value}`);
-      console.log(res.data);
-      setJobs(res.data.jobs);
-    } else {
-      fetchJobs();
-    }
-  };
+  //   if (e.value) {
+  //     const res = await axios.get(`${baseUrl}job/category/${e.value}`);
+  //     console.log(res.data);
+  //     setJobs(res.data.jobs);
+  //   } else {
+  //     fetchJobs();
+  //   }
+  // };
 
   return (
     <>
@@ -119,13 +155,13 @@ const JobList = () => {
               jobs.map((job) => {
                 return (
                   <div className="border-b pb-8" key={job._id}>
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex gap-3">
                       <img src={job.image} className="w-[120px] h-[120px]" />
                       <div>
                         <div className="flex flex-wrap">
                         
                           <span className="text-[20px] text-gray-400">
-                            {job.title}
+                            {job.location}
                           </span>
                         </div>
                         <div className="flex flex-wrap gap-4 text-[12px] ">
@@ -133,12 +169,12 @@ const JobList = () => {
                        
                           <div className="flex items-center gap-1">
                             <FaRegMoneyBillAlt className="text-[14px] text-gray-400" />
-                            <p className="text-gray-400">{job.salary}</p>
+                            <p className="text-gray-400">{job.charge}</p>
                           </div>
                           <div className="flex items-center gap-1">
                             <MdOutlineTimerOff className="text-[14px] text-gray-400" />
                             <p className="text-gray-400">
-                              Application Deadline: {job.deadLine}
+                              Weight: {job.weight} KGs
                             </p>
                           </div>
                         </div>
@@ -155,7 +191,7 @@ const JobList = () => {
                             onClick={() => navigate(`/single/${job._id}`)}
                             className="middle none center rounded-lg bg-pink-500 py-2 px-4 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                           >
-                            See More
+                            Take Delivery
                           </button>
                         </div>
                       </div>

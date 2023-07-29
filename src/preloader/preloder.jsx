@@ -2,9 +2,8 @@ import React from 'react'
 
 const preloder = () => {
     return (
-        <div >
-            <img src='https://mir-s3-cdn-cf.behance.net/project_modules/disp/8a1f1813765711.56277edb36b94.gif' className='h-[100vh] w-[100%]' />
-
+        <div className='w-full h-[100vh] flex justify-center items-center'>
+            <img src='https://media.giphy.com/media/l4FGKbWgkhHVGXzTW/giphy.gif' className=' w-[200px]' />
         </div>
     )
 }
